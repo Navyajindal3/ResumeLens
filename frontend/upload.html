@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" href="data:,">
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Get Internships | ResuMate</title>
+ <link rel="stylesheet" href="css/upload.css" />
+ <script src="https://cdn.lordicon.com/lordicon.js"></script>
+</head>
+
+<body>
+ <nav class="navbar">
+ <div class="navbar-container">
+ <div class="navbar-inner">
+ <a href="dashboard.html" class="logo">
+ <div class="logo-icon">
+ <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+ <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="currentColor" />
+ </svg>
+ </div>
+ <span class="logo-text">ResuMate</span>
+ </a>
+
+ <div class="navbar-right">
+ <div class="nav-links">
+ <a href="dashboard.html" class="nav-link">Home</a>
+
+ <a href="upload.html" class="nav-link active">Internships</a>
+ <a href="tracked.html" class="nav-link">Tracker</a>
+ </div>
+ <div class="nav-divider"></div>
+
+ 
+ </div>
+ </div>
+ </div>
+ </nav>
+
+ <main class="main-content">
+ <div class="container">
+ <section class="hero">
+ <h1>Unlock Your Next Opportunity</h1>
+ <p>Upload your resume to instantly discover internships perfectly matched to your skills and experience. Let our AI do the searching for you.</p>
+ </section>
+
+ <section class="upload-section">
+ <form id="uploadForm" enctype="multipart/form-data">
+ <label for="resumeFile" class="custom-file-label" id="customFileLabel">
+ Choose PDF Resume
+ </label>
+ <input type="file" id="resumeFile" name="resume" accept=".pdf" required hidden />
+ <button type="submit" class="cta-button">Analyze & Find Internships</button>
+ </form>
+ <div id="loadingSpinner" class="spinner" style="display: none;"></div>
+ <p id="uploadingMessage" class="upload-message" style="display: none;">Analyzing your resume and finding matches...</p>
+
+ <div id="uploadErrorDisplay" class="upload-error-message" style="display: none;">
+ </div>
+ </section>
+
+ <div class="right-panel" id="rightPanel" style="display: none;">
+ 
+ <div class="filter-toggle-container">
+ <button class="filter-toggle-btn" id="filterToggleBtn">
+ <span id="filter-icon"></span> Show Filters
+ </button>
+ </div>
+ 
+ <div class="filter-controls-wrapper" id="filterControlsWrapper">
+ <div class="filter-controls">
+ <h3>Filter Internships</h3>
+ <div class="filter-group">
+ <label for="locationFilter">Location:</label>
+ <select id="locationFilter">
+ <option value="">All Locations</option>
+ </select>
+ </div>
+ 
+ <div class="filter-group">
+ <label for="minStipend">Min. Stipend (₹):</label>
+ <input type="number" id="minStipend" min="0" placeholder="e.g., 10000">
+ </div>
+ 
+ <div class="filter-group">
+ <label for="minAts">Min. ATS Match (%):</label>
+ <input type="number" id="minAts" min="0" max="100" placeholder="e.g., 50">
+ </div>
+ 
+ <div class="filter-buttons">
+ <button id="applyFiltersBtn" class="cta-button">Apply</button>
+ <button id="resetFiltersBtn" class="cta-button secondary">Reset</button>
+ </div>
+ </div>
+ </div>
+ 
+ <div id="internshipResults"></div>
+ </div>
+ </div>
+ </main>
+
+ 
+
+  <script src="js/upload.js"></script>
+</body>
+</html>
